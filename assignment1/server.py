@@ -10,7 +10,7 @@ sock.listen(5)
 
 while True:
   clientSock, addr = sock.accept()
-  recvStr = sock.recv(1024)
+  recvStr = clientSock.recv(1024)
   sendStr = str(len(recvStr.split(" ")))
-  sock.send(sendStr.encode("ascii"))
-  sock.close()
+  clientSock.send(sendStr.encode("ascii"))
+  clientSock.close()
