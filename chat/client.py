@@ -3,7 +3,7 @@ import sys
 import os
 import select
 
-address = ("localhost", 9999)
+address = ("3.134.100.18", 9999)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
