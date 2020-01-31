@@ -1,7 +1,7 @@
 import socket
-import sys, os
-import threading
-import time
+import sys
+import os
+import select
 
 address = ("localhost", 9999)
 
@@ -13,14 +13,15 @@ sock.connect(address)
 connectMsg = usrname + " has connected.\n"
 sock.send(connectMsg.encode('ascii'))
 
-def poll():
-  msg = sock.recv(2048).decode('ascii')
-  if len(msg)>0:
-    print("\n"+msg+"\n")
-
 while 1:
-  print("looping")
-  poll()
-  msg = input("message> ")
-  sock.send((usrname + ": " + msg).encode('ascii'))
-
+  sockets = [sys.stdin, sock]
+  rsocks, wsock, errsock = select.select(sockets, [], [])
+  for rsock in rsocks:
+    if rsock==sock:
+      message = rsock.recv(2048).decode('ascii')
+      print(message)
+    else:
+      message = sys.stdin.readline()
+      sock.send((usrname + ": " + message).encode('ascii'))
+      sys.stdout.write("YOU: " + message)
+      sys.stdout.flush()
