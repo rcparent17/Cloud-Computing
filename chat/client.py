@@ -25,3 +25,5 @@ while 1:
       sock.send((usrname + ": " + message).encode('ascii'))
       sys.stdout.write("YOU: " + message)
       sys.stdout.flush()
+
+sock.close()
