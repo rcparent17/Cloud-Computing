@@ -1,0 +1,64 @@
+capitalize:
+$ python capitalize.py
+Enter some words: the sun will rise tomorrow
+The Sun Will Rise Tomorrow
+
+
+hangman:
+reill@DESKTOP-K6LE5B3 MINGW64 ~/workspace/Cloud-Computing/assignment2/hangman (master)
+$ python hangman.py
+Current guess: -  -  -  -  -  -
+Enter 1 letter: m 
+m is not in the word, or has already been guessed.
+5 guesses remaining.
+
+Current guess: -  -  -  -  -  -
+Enter 1 letter: o
+o is in the word.
+5 guesses remaining.
+
+Current guess: -  -  -  o  -  o
+Enter 1 letter: n
+n is in the word.
+5 guesses remaining.
+
+Current guess: -  -  n  o  -  o
+Enter 1 letter: v
+v is in the word.
+
+Current guess: -  -  n  o  v  o
+etc..
+
+
+shapes:
+= RESTART: C:\Users\reill\workspace\Cloud-Computing\assignment2\shapes\shapes.py
+Triangle with sides 2 4 5: Area = 3.799671038392666
+Rectangle with sides  3 4: Area = 12
+Triangle with sides 4 5 6: Area = 9.921567416492215
+Rectangle with sides  5 6: Area = 30
+Triangle with sides 2 4 3: Area = 2.9047375096555625
+Rectangle with sides  4 9: Area = 36
+Rectangle with sides  6 7: Area = 42
+
+
+RPC:
+client:
+[ec2-user@ip-172-31-29-1 rpc]$ python34 rpc_client.py
+2 + 2 = 4
+3 * 3 = 9
+5 + 5 = 10
+534 * 534 = 285156
+9808098 + 9808098 = 19616196
+98798 + 98798 = 197596
+
+addserver:
+[ec2-user@ip-172-31-41-36 rpc]$ python34 addServer.py
+172.31.29.1 - - [13/Feb/2020 22:02:50] "POST / HTTP/1.1" 200 -
+172.31.29.1 - - [13/Feb/2020 22:02:50] "POST / HTTP/1.1" 200 -
+172.31.29.1 - - [13/Feb/2020 22:02:50] "POST / HTTP/1.1" 200 -
+172.31.29.1 - - [13/Feb/2020 22:02:50] "POST / HTTP/1.1" 200 -
+
+multServer:
+[ec2-user@ip-172-31-27-3 rpc]$ python34 multServer.py
+172.31.29.1 - - [13/Feb/2020 22:02:50] "POST / HTTP/1.1" 200 -
+172.31.29.1 - - [13/Feb/2020 22:02:50] "POST / HTTP/1.1" 200 -
